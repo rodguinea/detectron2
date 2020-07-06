@@ -464,7 +464,7 @@ def _evaluate_box_proposals(dataset_predictions, coco_api, thresholds=None, area
 
     if thresholds is None:
         step = 0.05
-        thresholds = torch.arange(0.5, 0.95 + 1e-5, step, dtype=torch.float32)
+        thresholds = torch.arange(0.5, 0.75 + 1e-5, step, dtype=torch.float32)
     recalls = torch.zeros_like(thresholds)
     # compute recall for each iou threshold
     for i, t in enumerate(thresholds):
